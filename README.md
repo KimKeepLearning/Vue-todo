@@ -63,5 +63,18 @@ Todo list implement with Vue
     - `views`存放组件，其中`layout`文件夹放公共组件（header, footer），`todo`文件夹放app组件
     - `assets`文件夹放图片和样式
 - `dist`文件夹是webpack打包文件的输出路径
-- node_modules是安装的第三方依赖库
+- `node_modules`是安装的第三方依赖库
 
+## 3. Webpack配置
+
+#### (1) 插件
+
+- vue-style-loader可以实现**样式的**模块热更新
+
+- rimraf可以删除dist目录`rimraf dist`
+
+#### (2) vue-loader配置
+
+- `preserveWhitespace`：防止标签中的空格对页面造成影响
+- `extractCSS`： Vue文件中的css是否单独打包
+- `cssModules`：见（3）

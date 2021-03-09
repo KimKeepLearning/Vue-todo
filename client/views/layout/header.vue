@@ -10,8 +10,7 @@
     text-align center
     h1
         font-size 100px
-        color rgba(0,0,0,0.4)
+        color rgba(0,0,0,0.7)
         font-weight 400
         margin 20px
-
 </style>

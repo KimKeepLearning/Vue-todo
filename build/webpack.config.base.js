@@ -1,6 +1,6 @@
 const path = require('path')
 const isDev = process.env.NODE_ENV === 'development'
-
+const createvueLoaderOptions = require('./vue-loader.config')
 const config = {
     target: 'web',
     entry: path.join(__dirname, '../client/index.js'),
@@ -12,7 +12,8 @@ const config = {
         rules: [
             {
                 test: /\.vue$/,
-                loader: 'vue-loader'
+                loader: 'vue-loader',
+                options: createvueLoaderOptions(isDev)
             },
             {
                 test: /\.jsx$/,

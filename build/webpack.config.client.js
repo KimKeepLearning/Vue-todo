@@ -36,7 +36,7 @@ if (isDev) {
             {
                 test: /\.styl(us)?$/,
                 use: [
-                    'style-loader',
+                    'vue-style-loader',// 可以实现模块热更新
                     'css-loader',
                     {
                         loader: 'postcss-loader',
