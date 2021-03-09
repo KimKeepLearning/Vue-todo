@@ -1,7 +1,7 @@
 # Vue-todo
 Todo list implement with Vue
 
-![](.\overview.png)
+![](https://github.com/KimKeepLearning/Vue-todo/blob/master/overview.png)
 
 ## 1. webpack配置
 

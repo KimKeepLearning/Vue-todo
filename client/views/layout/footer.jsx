@@ -1,4 +1,4 @@
-import '../assets/styles/footer.styl'
+import '../../assets/styles/footer.styl'
 
 export default {
     data() {
@@ -14,3 +14,5 @@ export default {
         )
     }
 }
+
+
