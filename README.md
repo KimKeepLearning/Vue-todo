@@ -85,4 +85,4 @@ Todo list implement with Vue
 - 如果要在vue文件里用eslint，还要装eslint-plugin-html
 - package.json里面设置命令
     - `"lint": "eslint --ext .js --ext .vue --ext .jsx clint/"`
-    - 自动修改使用
+    - 自动修改使用，加`"--fix"`
