@@ -86,3 +86,33 @@ Todo list implement with Vue
 - package.json里面设置命令
     - `"lint": "eslint --ext .js --ext .vue --ext .jsx clint/"`
     - 自动修改使用，加`"--fix"`
+
+## 4. Vue知识点
+
+准备：指定import Vue from 'vue'的来源
+
+在webpack config里面设置resolve.alias['vue']。
+
+vue.esm.js和vue.runtime.esm.js的区别在于，是否允许在js中使用模板
+
+### 4.1 Vue实例
+
+#### （1）Vue实例的属性
+
+`app.$data`, `app.$props `, `app.$el`
+
+`app.$options`, `app.$root`, `app.$children`​
+
+`app.$slots`, `app.$scopedSlots`
+
+`app.$refs` ：快速定位到模板里某一个节点或组件
+
+`app.$isServer`：服务端渲染
+
+#### （2）Vue实例的方法
+
+`app.$watch`, `app.$on`,
+
+`app.$forceUpdate`：强制重新渲染
+
+`app.$set()`：类似于`defineProperty`里设置setter
