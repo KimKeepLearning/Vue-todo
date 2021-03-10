@@ -77,4 +77,12 @@ Todo list implement with Vue
 
 - `preserveWhitespace`：防止标签中的空格对页面造成影响
 - `extractCSS`： Vue文件中的css是否单独打包
-- `cssModules`：见（3）
+- `cssModules`
+
+#### (3) 使用eslint
+
+- 安装eslint, eslint-plugin-standard, eslint-plugin-promise, eslint-plugin-import, eslint-plugin-node.
+- 如果要在vue文件里用eslint，还要装eslint-plugin-html
+- package.json里面设置命令
+    - `"lint": "eslint --ext .js --ext .vue --ext .jsx clint/"`
+    - 自动修改使用

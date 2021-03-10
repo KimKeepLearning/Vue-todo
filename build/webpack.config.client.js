@@ -8,7 +8,6 @@ const { merge } = require('webpack-merge')
 
 const isDev = process.env.NODE_ENV === 'development'
 
-
 const defaultPlugins = [
     new webpack.DefinePlugin({
         'process.env': {
