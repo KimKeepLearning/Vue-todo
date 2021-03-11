@@ -116,3 +116,83 @@ vue.esm.js和vue.runtime.esm.js的区别在于，是否允许在js中使用模�
 `app.$forceUpdate`：强制重新渲染
 
 `app.$set()`：类似于`defineProperty`里设置setter
+
+### 4.2 生命周期
+
+- beforeCreate和created => 组件创建
+- beforeMount和mounted=> 组件挂载到dom节点上
+- beforeUpdate和updated => 数据更新时
+- beforeDestory和destoryed => 组件销毁
+- activated和deactivated => 和keep alive有关
+
+当创建Vue实例时，会首先触发beforeCreate和created函数，如果实例中指定了挂载的节点（`vm.$el`），会触发beforeMount和mounted函数。从beforeMount到mounted的过程中间，vue会根据template执行render函数，render结束后，才触发mounted函数。
+
+其余声明周期函数都需要有特定的情况才会触发
+
+### 4.3 Vue的数据绑定
+
+基本操作：`v-bind`, `v-html`, `v-on`
+
+#### （1）computed
+
+相当于一个getter方法
+
+- 与method相比，开销更小，因为computed只有当依赖的数据变化时才会计算, 当数据没有变化时, 它会读取缓存数据
+- 如果一个数据需要经过复杂计算就用 computed
+- 如果一个数据需要被监听并且对数据做一些操作就用 watch
+
+不要在computed里面修改依赖值！！（watch也是）
+
+#### （2）原生指令
+
+- v-text: 绑定的值是固定的
+- v-html: 绑定一段html
+- v-show/ v-if: v-if会从文档流里删除，引起重绘和回流（重排）
+
+- v-for: 注意绑定`:key`
+- v-model: 通常用在input，注意`:value`
+
+### 4.4 Vue组件
+
+#### （1）定义组件
+
+ 子组件通过Vue.component定义
+
+- data必须是函数，并且返回一个新建的对象，而不能是全局的对象（闭包？ 防止子组件间的数据同步）
+- Vue.extend，可以声明式的定义组件
+
+```javascript
+const component = { .. ... }
+const CompVue = Vue.extend(component)
+
+new CompVue ({
+    el:"#root"
+})
+```
+
+#### （2）插槽
+
+组件里面放什么是调用的时候决定的
+
+###### a. 具名插槽
+
+```css
+// 定义时
+<div :style="style">
+	<div class="header">
+		<slot name="header"></slot>    // 具名插槽
+	</div>
+	<div class="body">
+		<slot name="body"></slot>
+	</div>
+</div>
+
+// 组件使用时
+<comp-one>
+	<span slot="header">this is header</span>
+	<span slot="body">this is body</span>
+</comp-one>
+```
+
+###### b. 作用域插槽
+
