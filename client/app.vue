@@ -2,8 +2,13 @@
     <div id="app">
         <div id="cover"></div>
         <Header></Header>
+        <!-- <Todo></Todo> -->
+        <router-link :to="{name: 'app'}">app</router-link>
+        <router-link to="/login">login</router-link>
+        <transition name="fade">
+            <router-view/>
+        </transition>
         <Footer></Footer>
-        <Todo></Todo>
     </div>
 </template>
 
@@ -34,6 +39,7 @@ import Todo from './views/todo/todo.vue'
       top 0
       bottom 0   
       background-color #fff 
+      background-attachment:fixed
       opacity 0.7
       z-index -1
 </style>

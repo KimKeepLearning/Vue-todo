@@ -20,6 +20,7 @@
             @clearAllCompleted="clearAllCompleted"
         >
         </Tabs>
+        <!-- <router-view/> -->
     </section>
 </template>
 <script>

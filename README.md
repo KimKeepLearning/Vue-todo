@@ -228,3 +228,28 @@ render(createElement) {
 
 ### 4.6 Vue-router
 
+**路由**：
+
+- 以前：链接输入之后输入到后端，进行模板渲染，产生一个新的html，返回到浏览器，浏览器再显示
+- 现在：页面跳转不经过服务器，渲染内容来自前端js
+
+使用vue-router和webpack需要设置webpack中的devServer:  
+
+```javascript
+historyApiFallback: {
+	index: '/index.html'
+}
+```
+
+`router-view`：根据路由取得对应的模板内容。
+
+##### 配置项
+
+- `mode`去掉地址中的#
+- `linkActiveClass`，`linkExactActiveClass` 给链接的样式class
+- `scrollBehavior`设置跳转时的滚动状态
+- `fallback`不一定所有的浏览器都支持vue的路由，fallback一套哈希的
+
+**其他操作**
+
+a. 在`<router-view>`上包裹`transition` 可以设定页面切换时的动画

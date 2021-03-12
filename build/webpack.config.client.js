@@ -15,7 +15,9 @@ const defaultPlugins = [
         }
     }),
     new VueLoaderPlugin(),
-    new HTMLPlugin()
+    new HTMLPlugin({
+        template: path.join(__dirname, 'template.html')
+    })
 ]
 
 let config
@@ -24,6 +26,9 @@ const devServer = {
     host: '0.0.0.0',
     overlay: {
         errors: true,
+    },
+    historyApiFallback: {
+        index: '/index.html'
     },
     hot: true
 }

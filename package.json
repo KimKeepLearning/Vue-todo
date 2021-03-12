@@ -9,7 +9,7 @@
     "build": "npm run clean && npm run build:client",
     "practice": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.practice.js",
     "clean": "rimraf dist",
-    "lint":  "eslint --ext .js --ext .vue --ext .jsx client/",
+    "lint": "eslint --ext .js --ext .vue --ext .jsx client/",
     "lint-fix": "eslint --fix --ext .js --ext .vue --ext .jsx client/",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.client.js"
   },
@@ -47,6 +47,7 @@
     "stylus-loader": "^3.0.2",
     "url-loader": "^2.0.1",
     "vue-loader": "^15.7.0",
+    "vue-router": "^3.5.1",
     "vue-style-loader": "^4.1.3",
     "vue-template-compiler": "^2.6.10",
     "webpack": "^4.36.1",
