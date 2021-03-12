@@ -1,6 +1,16 @@
 import Vue from 'vue'
 
+const ChildComp = {
+    template: `
+        <div>child component</div>
+    `
+}
+
+
 const component = {
+    components: {
+        ChildComp
+    },
     // template: `
     //     <div :style="style">
     //         <div class="header">
@@ -15,6 +25,7 @@ const component = {
         <div :style="style">
             <!--<slot value="456" aaa="111"></slot>-->
             <slot :value="value"></slot>
+            <child-comp></child-comp>
         </div>
     `,
     data(){
