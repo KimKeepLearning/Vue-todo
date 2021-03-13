@@ -253,3 +253,41 @@ historyApiFallback: {
 **其他操作**
 
 a. 在`<router-view>`上包裹`transition` 可以设定页面切换时的动画
+
+b. 路由的传参，例如`path: '/app/:id'`，还可以声明`props: true`
+
+c. 导航守卫，每次路由跳转时会先后执行router.beforeEach(), router.beforeResolve(), router.afterEach()
+
+- router.beforeEach()可以进行一些路由的校验
+
+### 4.7 Vuex
+
+是一个store
+
+#### （1）基本操作
+
+```js
+// 创建一个store
+
+Vue.use(Vuex) // 这个一定要在定义store前做
+
+const store = new Vuex.Store({
+    state: {
+        count: 0
+    },
+    mutations: { // 修改count值
+        updateCount (state, num){
+            state.count = num
+        }
+    }
+})
+export default store
+```
+
+应用store：在应用的入口文件(index.js)里import，然后new Vue里声明
+
+#### （2）state 和get
+
+state里面放数据，getters相当于是vuex里面的computed，然后在app.vue里面通过计算属性（可以利用mapState和mapGetters）返回this.$store.getters.XXX，并渲染在页面上
+
+#### （3）Vux的分模块
