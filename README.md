@@ -290,4 +290,6 @@ export default store
 
 state里面放数据，getters相当于是vuex里面的computed，然后在app.vue里面通过计算属性（可以利用mapState和mapGetters）返回this.$store.getters.XXX，并渲染在页面上
 
-#### （3）Vux的分模块
+## 5. 服务端渲染
+
+![image-20210313222118112](C:\Users\18430\AppData\Roaming\Typora\typora-user-images\image-20210313222118112.png)
