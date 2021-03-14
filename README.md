@@ -293,3 +293,25 @@ state里面放数据，getters相当于是vuex里面的computed，然后在app.v
 ## 5. 服务端渲染
 
 ![image-20210313222118112](C:\Users\18430\AppData\Roaming\Typora\typora-user-images\image-20210313222118112.png)
+
+### 5.1 server端的webpack配置
+
+- target要设成'node'，因为是在node上跑的
+
+- output：
+
+    ```javascript
+    output: {
+            libraryTarget: 'commonjs2',
+            filename: 'server-entry.js',
+            path: path.join(__dirname, '../server-build')
+    },
+    ```
+
+- externals--设置依赖哪些包？也就是packages.json里面的“dependencies”(安装的时候用-S)，而devDependencies主要是一些打包的工具，安装的时候用-D
+
+- 插件---一定要用vue-server-renderer
+
+### 5.2 node server---koa
+
+学个骨灰盖饭，好难啊，看不懂
